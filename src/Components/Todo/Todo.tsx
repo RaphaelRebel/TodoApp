@@ -1,7 +1,15 @@
 import "./Todo.css"
+import CardTodo from "../CardTodo/CardTodo"
 
 const Todo = () => {
-    return <p>Hello</p>
+
+    return (
+    <>
+    <CardTodo />
+    <div className="addTodo">
+       <p>+</p> 
+        </div>
+    </>)
 }
 
 export default Todo

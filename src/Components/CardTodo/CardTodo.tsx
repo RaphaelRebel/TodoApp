@@ -4,6 +4,7 @@ import TodoData from "../../Data/TodoData"
 import { EntryType } from "perf_hooks"
 
 
+
 // type ArticleProps = {
 //     className: string,
 //     children?: ReactNode
@@ -23,18 +24,11 @@ interface removeFromList {
     removeFromList: (id: number) => void
 }
 
-type TodoDataId = Pick<TodoDataProps, "id">
-
-
-
-// type TodoDataDone = Pick<TodoDataProps, "done">
-
-
 const TodoItem = ({ name, id, removeFromList }: TodoDataProps & removeFromList) => {
 
 
     const [isDone, setIsDone] = useState<boolean>(false)
-    
+
 
     const removeTodo = () => {
         setIsDone(!isDone);
@@ -57,22 +51,22 @@ const CardTodo = () => {
         setTodos(updatedTodos)
     }
 
-    const inputChange = (event: React.ChangeEvent<HTMLInputElement> ) => {
+    const inputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(event.target.value)
     }
 
-    const keyDown = (event:any) => {
-        if(event.keyCode == 13){
+    const keyDown = (event: any) => {
+        if (event.keyCode == 13) {
 
             let newTodoId = 0
-            if(todos.length !== 0){
-                const latestId = todos.length -1
+            if (todos.length !== 0) {
+                const latestId = todos.length - 1
                 newTodoId = todos[latestId].id + 1
-            } else{
+            } else {
                 newTodoId = 1
             }
-            
-            
+
+
 
 
             const newInputValue = {
@@ -82,6 +76,7 @@ const CardTodo = () => {
             }
 
             setTodos(todos.concat(newInputValue))
+            setInputValue("")
 
         }
     }
@@ -103,7 +98,7 @@ const CardTodo = () => {
             <ul>
                 {TodoDataToBeRendered}
             </ul>
-            <input onKeyDown={keyDown} onChange={inputChange} type="text" />
+            <input value={inputValue} onKeyDown={keyDown} onChange={inputChange} type="text" />
         </article>)
 }
 

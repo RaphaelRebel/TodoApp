@@ -1,0 +1,19 @@
+.addTodo{
+    background-color: red;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 9rem;
+    display: grid;
+    place-items: center;
+    font-size: 300%;
+    
+}
+
+.addTodo:hover{
+    /* filter: blur(0.2rem); */
+    cursor: pointer;
+}
+
+.addTodo p {
+    transform: translate(0.1rem, -0.3rem); 
+ }
