@@ -1,0 +1,55 @@
+.todo{
+    display: flex;
+    width: 100vw;
+    position: relative;
+}
+
+.todoCards{
+    display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.addTodo{
+    height: 7rem;
+    width: 10%;
+    display: grid;
+    place-items: center;
+    font-size: 300%;
+    margin: 1rem;
+    position: fixed;
+    right: 0;
+    bottom: 3rem;
+    z-index: 1;
+    
+}
+
+.addTodo p{
+background-color: rgb(102, 235, 135);
+width: 6rem;
+border-radius: 9rem;
+height: 6rem;
+
+}
+
+.addTodo:hover{
+    /* filter: blur(0.2rem); */
+    cursor: pointer;
+}
+
+.addTodo p {
+    /* transform: translate(0.1rem, -0.3rem);  */
+    text-align: center;
+ }
+
+ @media only screen and (max-width: 600px){
+    .todo{
+        display: initial;
+        position: relative;
+    }
+    .addTodo{
+        
+        width: 6rem;
+    }
+ }
