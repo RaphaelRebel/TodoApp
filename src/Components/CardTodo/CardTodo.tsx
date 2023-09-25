@@ -88,9 +88,10 @@ const CardTodo = ({ removeCard, id }: any) => {
     <motion.article
       animate={{ opacity: 1, x: 0 }}
       initial={{ opacity: 0, x: -40 }}
-      transition={{ delay: 0.5 }}
+      transition={{ duration: 0.1 }}
       exit={{ opacity: 0, scale: 0.5 }}
       className="cardTodo"
+      layout="position"
     >
       <header>
         {nameThisBetter}
