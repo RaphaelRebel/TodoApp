@@ -59,7 +59,15 @@ const CardTodo = ({ removeCard, id }: any) => {
     }
   };
 
-  let titleInputToBeRendered: any = title ? title : "Things to do";
+  const titleInput: () => void = () => {
+    setInputTitle(true);
+  };
+
+  let titleInputToBeRendered: any = title ? (
+    <h2 onClick={titleInput}>{title} </h2>
+  ) : (
+    <h2 onClick={titleInput}>Things to do</h2>
+  );
 
   let nameThisBetter: React.ReactNode = inputTitle ? (
     <motion.input
@@ -76,27 +84,17 @@ const CardTodo = ({ removeCard, id }: any) => {
     titleInputToBeRendered
   );
 
-  const titleInput: () => void = () => {
-    setInputTitle(true);
-  };
-
   return (
     <motion.article
       animate={{ opacity: 1, x: 0 }}
       initial={{ opacity: 0, x: -40 }}
       transition={{ delay: 0.5 }}
-      exit={{ opacity: 0, scale: 0.5, x: -40 }}
+      exit={{ opacity: 0, scale: 0.5 }}
       className="cardTodo"
     >
       <header>
-        <motion.h2
-          onClick={titleInput}
-          initial={{ y: -20 }}
-          animate={{ y: 0 }}
-          exit={{ y: 20 }}
-        >
-          {nameThisBetter}
-        </motion.h2>
+        {nameThisBetter}
+
         <p onClick={titleInput} className="cardTodo_edit">
           Edit
         </p>

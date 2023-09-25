@@ -29,14 +29,16 @@ const TodoItem = ({ name, id, removeFromList }: TodoDataProps) => {
       variants={li}
       animate={{ y: 0, opacity: 1 }}
       initial={{ y: 40, opacity: 0 }}
-      transition={{ delay: 0.1}}
+      transition={{ delay: 0.1, duration: 0.1}}
       className={isDone ? "cardTodo--done" : ""}
       onClick={removeTodo}
       key={id}
       exit={{ opacity: 0, y: -40 }}
+      layout="position"
     >
       {name}
     </motion.li>
+
   );
 };
 
